@@ -304,7 +304,7 @@ namespace HandsOnTdd.CalculatorApp.Tests
         }
 
         [Fact]
-        public void Nao_Deve_Calcular_Valor_Do_Produto_Quando_Usuario_Nao_Vip_Receber_Desconto_Mair_Vip()
+        public void Nao_Deve_Calcular_Valor_Do_Produto_Quando_Usuario_Nao_Vip_Receber_Desconto_Maior_Vip()
         {
             // Arrange
             var calculadora = new Calculadora();
