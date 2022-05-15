@@ -214,7 +214,7 @@ namespace HandsOnTdd.CalculatorApp.Tests
         }
 
         [Fact]
-        public void Nao_Deve_Calcular_Valor_Do_Produto_Com_Desconto_Quando_Receber_Descondo_Menor_Zero()
+        public void Nao_Deve_Calcular_Valor_Do_Produto_Com_Desconto_Quando_Receber_Desconto_Menor_Zero()
         {
             // Arrange
             var calculadora = new Calculadora();
@@ -231,7 +231,7 @@ namespace HandsOnTdd.CalculatorApp.Tests
         }
 
         [Fact]
-        public void Nao_Deve_Calcular_Valor_Do_Produto_Com_Desconto_Quando_Receber_Descondo_Maior_Um()
+        public void Nao_Deve_Calcular_Valor_Do_Produto_Com_Desconto_Quando_Receber_Desconto_Maior_Um()
         {
             // Arrange
             var calculadora = new Calculadora();
@@ -273,12 +273,12 @@ namespace HandsOnTdd.CalculatorApp.Tests
 
             var usuarioVip = true;
             var precoProduto = 100d;
-            var valorDescondo = 0.1;
+            var valorDesconto = 0.1;
 
             var resultadoEsperado = 70d;
 
             // Act
-            var resultado = calculadora.CalcularDescontoProdutoPorUsuario(usuarioVip, precoProduto, valorDescondo);
+            var resultado = calculadora.CalcularDescontoProdutoPorUsuario(usuarioVip, precoProduto, valorDesconto);
 
             // Assert
             resultado.Should().Be(resultadoEsperado);
@@ -292,12 +292,12 @@ namespace HandsOnTdd.CalculatorApp.Tests
 
             var usuarioVip = false;
             var precoProduto = 100d;
-            var valorDescondo = 0.1;
+            var valorDesconto = 0.1;
 
             var resultadoEsperado = 90d;
 
             // Act
-            var resultado = calculadora.CalcularDescontoProdutoPorUsuario(usuarioVip, precoProduto, valorDescondo);
+            var resultado = calculadora.CalcularDescontoProdutoPorUsuario(usuarioVip, precoProduto, valorDesconto);
 
             // Assert
             resultado.Should().Be(resultadoEsperado);
@@ -311,14 +311,14 @@ namespace HandsOnTdd.CalculatorApp.Tests
 
             var usuarioVip = false;
             var precoProduto = 100d;
-            var valorDescondo = 0.5;
+            var valorDesconto = 0.5;
 
             // Act
-            Action action = () => calculadora.CalcularDescontoProdutoPorUsuario(usuarioVip, precoProduto, valorDescondo);
+            Action action = () => calculadora.CalcularDescontoProdutoPorUsuario(usuarioVip, precoProduto, valorDesconto);
 
             // Assert
             action.Should().Throw<ArgumentException>()
-                .WithMessage("O descondo para o cliente não VIP é inválido");
+                .WithMessage("O desconto para o cliente não VIP é inválido");
         }
     }
 }

@@ -95,7 +95,7 @@ namespace HandsOnTdd.CalculatorApp
 
             if (valorDesconto > VALOR_DESCONTO_VIP)
             {
-                throw new ArgumentException("O descondo para o cliente não VIP é inválido");
+                throw new ArgumentException("O desconto para o cliente não VIP é inválido");
             }
 
             return CalcularDescontoProduto(precoProduto, valorDesconto);
